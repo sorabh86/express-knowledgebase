@@ -1,0 +1,14 @@
+{
+  "name": "express-knowledgebase",
+  "description": "NodeJS & AngularJS application",
+  "main": "",
+  "authors": [
+    "Sorabh <ssorabh.ssharma@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "http://sorabh86.github.io",
+  "dependencies": {
+    "angular-route": "^1.6.6",
+    "bootstrap": "^3.3.7"
+  }
+}

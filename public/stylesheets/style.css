@@ -1,0 +1,20 @@
+footer {
+	background: #333;
+	color:#fff;
+	height:40px;
+	padding-top: 10px;
+	text-align: center;
+}
+.content {
+	margin-bottom: 40px;
+}
+.heading {
+	background: #666;
+	color: #fff;
+	padding: 5px 10px;
+}
+.article {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+}
