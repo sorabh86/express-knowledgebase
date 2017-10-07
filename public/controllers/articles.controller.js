@@ -13,10 +13,19 @@ angular.module('kBApp')
 	});
 }])
 
-.controller('ArticleDetailsCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+.controller('ArticleDetailsCtrl', ['$scope', '$http', '$routeParams', '$location', function($scope, $http, $routeParams, $location){
 	$http.get('/articles/'+$routeParams.id).then(function(res){
 		$scope.article = res.data;
 	});
+
+	$scope.removeArticle = function(){
+		$http.delete('/articles/'+$routeParams.id).then(function(res){
+			console.log('delete', res);
+		});
+
+		$location.path('/articles');
+	};
+
 }])
 
 .controller('ArticleCreateCtrl', ['$scope', '$http', '$routeParams', '$location', function($scope, $http, $routeParams, $location){
