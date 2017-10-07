@@ -1,1 +1,24 @@
-this is add article view template
+<div ng-controller="ArticleCreateCtrl">
+
+	<form ng-submit="addArticle()">
+		<legend>Add Article</legend>
+
+		<div class="form-group">
+			<label for="title">Title</label>
+			<input type="text" class="form-control" ng-model="title" name="title" placeholder="Enter Title">
+		</div>
+		<div class="form-group">
+			<label for="category">Category</label>
+			<select class="form-control" ng-model="category" name="category" placeholder="Enter Category">
+				<option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="body">Body Text</label>
+			<textarea type="text" class="form-control" ng-model="body" name="body" placeholder="Enter Body Text"></textarea>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+		<a href="#!/categories" class="btn btn-danger">Cancel</a>
+	</form>
+</div>

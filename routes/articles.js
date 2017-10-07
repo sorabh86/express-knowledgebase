@@ -54,25 +54,29 @@ router.post('/', function(req, res, next){
 });
 
 //update article
-router.put('/', function(res,req,next){
-	var id = req.body.id;
+router.put('/', function(req,res,next){
 	var data = {
+		id: req.body.id,
 		title : req.body.title,
-		body : req.body.body
+		body : req.body.body,
+		category : req.body.category
 	};
 
 	//create article
-	Article.updateArticle(id, data, function(err, article){
-		if (err) { console.log(err); }
+	Article.updateArticle(data, function(err, article, next){
+		if (err) { 
+			console.log(err); 
+		}
 
-		res.location('/articles');
-		res.redirect('/articles');
-	})
+		res.json(article);
+		// res.location('/articles');
+		// res.redirect('/articles');
+	});
 });
 
 
 // delete article
-router.delete('/:id',function(res,req,next){
+router.delete('/:id',function(req,res,next){
 	var id = req.params.id;
 
 	//remove Article
@@ -80,8 +84,9 @@ router.delete('/:id',function(res,req,next){
 		if(err)
 			console.log(err);
 
-		res.location('/articles');
-		res.redirect('/articles');
+		res.json(article);
+		/*res.location('/articles');
+		res.redirect('/articles');*/
 	});
 });
 

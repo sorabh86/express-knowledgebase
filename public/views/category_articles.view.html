@@ -1,1 +1,14 @@
-this is articles by category template
+<a href="#!/categories" class="btn btn-primary">Go Back</a>
+<h2 class="heading">{{category}} Articles</h2>
+<div ng-controller="ArticlesCtrl">
+	<div class="row">
+		<div ng-repeat="article in cat_articles" class="col-md-12">
+			<div class="article">
+				<h3>{{article.title}}</h3>
+				<p>{{article.body | limitTo : 100 }}</p>
+				<a class="btn btn-default" href="#!/articles/details/{{article._id}}">Read Articles</a>
+			</div>
+		</div>
+		<div class="col-md-12" ng-if="cat_articles == false">No Article to display</div>
+	</div>
+</div>

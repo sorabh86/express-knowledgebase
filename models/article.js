@@ -45,16 +45,16 @@ module.exports.createArticle = function(newArticle, callback) {
 };
 
 // update article
-module.exports.updateArticle = function(id, data, callback) {
+module.exports.updateArticle = function(data, callback) {
 	var title = data.title;
 	var body = data.body;
 	var category = data.category;
-	var query = {_id:id};
-	Article.findById(id, function(err, article){
+	
+	Article.findById(data.id, function(err, article){
 		if(!article) {
 			return next(new Error('Could not load article'));
 		} else {
-			//update
+			// update
 			article.title = title;
 			article.body = body;
 			article.category = category;

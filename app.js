@@ -6,9 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-var db = mongoose.connection;
 
 mongoose.connect('mongodb://localhost/exp-knowledgebase');
+var db = mongoose.connection;
 
 var index = require('./routes/index');
 var articles = require('./routes/articles');

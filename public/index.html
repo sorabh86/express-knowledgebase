@@ -28,11 +28,18 @@
           </button>
           <a class="navbar-brand" href="#">ExpKnowledgebase</a>
         </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#!/articles">Articles</a></li>
+        </ul>
       </div>
     </nav>
 
     <div class="container content">
-
+      <div class="row">
+        <div class="col-md-offset-10 col-md-2">
+          <a href="#!/articles/add" class="btn btn-primary pull-right">Create Article</a>
+        </div>
+      </div>
       <div ng-view></div>
 
     </div><!-- /.container -->
